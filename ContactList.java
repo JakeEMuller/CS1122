@@ -189,39 +189,3 @@ public class ContactList {
             }
 
         }
-
-//        while (!action.equalsIgnoreCase("Close")) {
-//            System.out.println("Enter a command (Enter \"help\" for help, Enter Close to terminate)");
-//            action = ui.next();
-//            if (action.equalsIgnoreCase("help")) {
-//                System.out.println("\"help\", list all commands");
-//                System.out.println("\"add\", add a contact to the list");
-//                System.out.println("\"load\", load contacts from a list (Note this replaces contacts list)");
-//                System.out.println("\"store\", store contacts to a text document\n");
-//            }
-//            if (action.equalsIgnoreCase("load")) {
-//                System.out.println("what file would you like to load from");
-//                Scanner temp = new Scanner(System.in);
-//                String file = temp.next();
-//                user = ContactList.loadContacts(file);
-//                System.out.println("you have loaded from " + file);
-//            } else if (action.equalsIgnoreCase("add")) {
-//                Scanner test = new Scanner(System.in);
-//                System.out.println("please enter an name and email separtated by a colon (Example, \"Joe Schome:jSchome@gmail.com\")");
-//                String nameEmail = test.nextLine();
-//                String[] info = nameEmail.split(":");
-//                String name = info[0];
-//                String email = info[1];
-//                user.addEntry(name, email);
-//
-//            } else if (action.equalsIgnoreCase("store")) {
-//                System.out.println("Enter the name of the file you would like to store your contacts in (Example \"test.txt\")");
-//                String fileName = ui.next();
-//                user.storeContacts(fileName);
-//            } else {
-//                System.out.println("That is not a command, please enter a command. (Enter \"help\" for commands)");
-//            }
-//
-//        }
-    }
-}
