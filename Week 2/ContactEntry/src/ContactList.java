@@ -1,18 +1,32 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This
+ *
+ * @author Jake Muller
+ */
 public class ContactList {
     ArrayList<ContactEntry> list;
     int entries;
 
+    /**
+     * Initializes ContactList
+     */
     public ContactList() {
         list = new ArrayList<ContactEntry>();
         entries = 0; //number of entries in the list
     }
 
+    /**
+     * retrieves the List variable from an object
+     *
+     * @return
+     */
     public ArrayList<ContactEntry> getList() {
         return list;
     }
@@ -21,14 +35,29 @@ public class ContactList {
         this.list = list;
     }
 
+    /**
+     * retrieves the List variable from an object
+     */
     public int getEntries() {
         return entries;
     }
 
+    /**
+     * changes the value of entries
+     *
+     * @param entries
+     */
     public void setEntries(int entries) {
         this.entries = entries;
     }
 
+    /**
+     * Takes an input of a name and email
+     * and adds it to the array of ContactEntry
+     *
+     * @param name
+     * @param email
+     */
     void addEntry(String name, String email) {
         // add a new item at the end of the list.
         ContactEntry entry = new ContactEntry(name, email);
@@ -36,6 +65,15 @@ public class ContactList {
         entries++;
     }
 
+    /**
+     * Takes a name as an input then tests to see if
+     * the element exists in the ContactList
+     * if it is found then the method will return the email as
+     * a string.
+     *
+     * @param name
+     * @return
+     */
     String getEmail(String name) {
         // return email associated with name,
         // or return null if the name does not occur in the list.
@@ -49,7 +87,14 @@ public class ContactList {
         return null; // name wasnt found
     }
 
-
+    /**
+     * Takes a filepath as a String then finds the file
+     * and loads the contacts from that file and places it into the
+     * contact list
+     *
+     * @param filepath
+     * @return
+     */
     public static ContactList loadContacts(String filepath) {
         ArrayList<String> info = new ArrayList<String>();
         ContactList test = new ContactList();
@@ -89,6 +134,13 @@ public class ContactList {
         return test;
     }
 
+    /**
+     * Takes a filepath as a String
+     * then stores the contacts into a file
+     * named according to the input
+     *
+     * @param filepath
+     */
     public void storeContacts(String filepath) {
         try (PrintWriter pwt = new PrintWriter(filepath)) {
             for (int i = 0; getEntries() > i; i++) {
@@ -104,6 +156,12 @@ public class ContactList {
 
     }
 
+    /**
+     * Prints out the list of contacts stored in
+     * the object
+     *
+     * @return
+     */
     public String toString() {
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; getEntries() > i; i++) {
@@ -115,10 +173,15 @@ public class ContactList {
         return result.toString();
     }
 
+    /**
+     * The text based UI is stored here
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         ContactList user;
         Scanner ui = new Scanner(System.in);
-        System.out.println("Enter a file to load");
+        System.out.println("Enter a file to load (example: testFile.txt)");
         Scanner temp = new Scanner(System.in);
         String file = temp.next();
         user = ContactList.loadContacts(file);
@@ -140,31 +203,39 @@ public class ContactList {
                 // look up email
                 System.out.println("Enter the name you are looking for");
                 name = universal.next();
-                System.out.printf("The email of %s is %s \n\n", name, user.getEmail(name));
+                if (user.getEmail(name) != null) {
+                    System.out.printf("The email of %s is %s \n\n", name, user.getEmail(name));
+                } else {
+                    System.out.printf("%s is not in the contact list \n\n", name);
+                }
             } else if (action == 2) {
                 // add entry
                 System.out.println("please enter an name and email separtated by a colon (Example, \"Joe Schome:jSchome@gmail.com\"):");
                 String nameEmail = universal.nextLine();
                 System.out.println();
-                String[] info = nameEmail.split(":");
-                name = info[0];
-                email = info[1];
-                user.addEntry(name, email);
-                System.out.printf("%s:%s has been added\n", name, email);
+                if (nameEmail.contains(":")) {
+                    String[] info = nameEmail.split(":");
+                    name = info[0];
+                    email = info[1];
+                    user.addEntry(name, email);
+                    System.out.printf("%s at %s has been added\n", name, email);
+                } else {
+                    System.out.println("The entry was not formatted correctly try again\n\n");
+                }
             } else if (action == 3) {
                 // delete an entry
                 System.out.println("enter the name you want to remove from the list:");
                 name = universal.nextLine();
                 if (user.getEmail(name) != null) { // test to see if element exists
                     for (int i = 0; user.getList().size() > i; i++)
-                    if (name.equalsIgnoreCase(user.getList().get(i).getName())) { //checks to see if name is equal to the element in the list
-                        user.getList().remove(i);
-                        user.setEntries(user.getEntries() - 1);
-                    }
+                        if (name.equalsIgnoreCase(user.getList().get(i).getName())) { //checks to see if name is equal to the element in the list
+                            user.getList().remove(i);
+                            user.setEntries(user.getEntries() - 1);
+                        }
                     System.out.printf("You have removed %s from the list\n\n", name);
 
                 } else {
-                    System.out.println("The name entered does not exist in the list");
+                    System.out.println("The name entered does not exist in the list\n\n");
                 }
             } else if (action == 4) {
                 // change email
@@ -187,7 +258,6 @@ public class ContactList {
                 // save additions and close
                 user.storeContacts(file);
             }
-
         }
     }
 }
