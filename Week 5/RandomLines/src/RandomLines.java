@@ -5,9 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-
 public class RandomLines extends Application {
-
     public void start(Stage stage) throws Exception{
         Group root = new Group();
         Scene scene = new Scene(root, 600, 500);
