@@ -5,7 +5,7 @@ Michigan Tech University - Intro to Programming II
 * [HangMan](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%201/Hangman/src/HangMan.java)
   - Play hang man With ASCII art
 * [Word Finder](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%201/Find/src/Find.java)
-  -Finds a String within a file
+  - Finds a String within a file
 ## Week 2
 * [Contact List](https://github.com/JakeEMuller/CS1122-MTU/tree/master/Week%202/ContactEntry/src)
   - A Fully Usable Contact DataBase with Text based UI
