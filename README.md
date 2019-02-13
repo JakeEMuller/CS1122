@@ -8,6 +8,8 @@ Michigan Tech University - Intro to Programming II
 * [Contact List](https://github.com/JakeEMuller/CS1122-MTU/tree/master/Week%202/ContactEntry/src)
 ## Week 5
 * [Random Lines](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%205/RandomLines/src/RandomLines.java)
+* [Exercises Problem 1](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%205/Exercises%205/Problem1/src/Problem1.java)
+  - Create a house using JavaFx Shapes 
 ## Personal Projects/Tests
 * [Inheritance test](https://github.com/JakeEMuller/CS1122-MTU/tree/master/PersonalProjects/Inheritance/src)
 * [JavaFx test](https://github.com/JakeEMuller/CS1122-MTU/blob/master/PersonalProjects/JavaFxTest/src/InClassFeb22.java)
