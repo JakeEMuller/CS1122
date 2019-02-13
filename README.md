@@ -6,8 +6,8 @@ Michigan Tech University - Intro to Programming II
 * [File Finder](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%201/Find/src/Find.java)
 ## Week 2
 * [Contact List](https://github.com/JakeEMuller/CS1122-MTU/tree/master/Week%202/ContactEntry/src)
-## Week 4
-* [Random Lines](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%204/src/RandomLines.java)
+## Week 5
+* [Random Lines](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%205/RandomLines/src/RandomLines.java)
 ## Personal Projects/Tests
 * [Inheritance test](https://github.com/JakeEMuller/CS1122-MTU/tree/master/PersonalProjects/Inheritance/src)
 * [JavaFx test](https://github.com/JakeEMuller/CS1122-MTU/blob/master/PersonalProjects/JavaFxTest/src/InClassFeb22.java)
