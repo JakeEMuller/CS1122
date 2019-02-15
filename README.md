@@ -19,6 +19,6 @@ Michigan Tech University - Intro to Programming II
 ## Personal Projects/Tests
 * [Inheritance test](https://github.com/JakeEMuller/CS1122-MTU/tree/master/PersonalProjects/Inheritance/src)
   - Basic test of inheritence
-* [JavaFx test](https://github.com/JakeEMuller/CS1122-MTU/blob/master/PersonalProjects/JavaFxTest/src/InClassFeb22.java)
+* [JavaFx test](https://github.com/JakeEMuller/CS1122-MTU/tree/master/PersonalProjects/JavaFxTest/src)
   - Basic test of JavaFx basics
 
