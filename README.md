@@ -14,8 +14,11 @@ Michigan Tech University - Intro to Programming II
   - Creates Random Lines with varrying sizes and colors
 * [Exercises Problem 1](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%205/Exercises%205/Problem1/src/Problem1.java)
   - Create a house using JavaFx Shapes 
+* [Create A Bar Graph](https://github.com/JakeEMuller/CS1122-MTU/blob/master/Week%205/CreateABarChart/src/DinamicBarChart.java)
+  - A program that makes Bar Graphs through user inputed data
 ## Personal Projects/Tests
 * [Inheritance test](https://github.com/JakeEMuller/CS1122-MTU/tree/master/PersonalProjects/Inheritance/src)
   - Basic test of inheritence
 * [JavaFx test](https://github.com/JakeEMuller/CS1122-MTU/blob/master/PersonalProjects/JavaFxTest/src/InClassFeb22.java)
   - Basic test of JavaFx basics
+
