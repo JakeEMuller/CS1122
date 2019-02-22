@@ -35,7 +35,7 @@ public class WebBrowser extends Application {
     private Stage stage = null;
     private BorderPane borderPane = null;
     private WebView view = null;
-    private WebEngine webEngine = null;
+    public WebEngine webEngine = null;
     private WebHistory webHistory = null;
     private Text statusbar = null;
     private TextField URLfield = null;
@@ -97,7 +97,6 @@ public class WebBrowser extends Application {
         back = new Button("<--");
         back.setOnAction(e -> {
             if (webHistory.getCurrentIndex() != 0) {
-                int his = webHistory.getCurrentIndex();
                 webHistory.go(-1);
             }
         });
@@ -105,7 +104,6 @@ public class WebBrowser extends Application {
         forward = new Button("-->");
         forward.setOnAction(e -> {
 //          webEngine.executeScript("history.back()");
-            int his = webHistory.getCurrentIndex();
             webHistory.go(+1);
         });
         //Search function
