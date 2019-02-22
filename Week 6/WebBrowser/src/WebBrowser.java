@@ -135,11 +135,11 @@ public class WebBrowser extends Application {
         help.setOnAction(e -> {
             webEngine.loadContent("" +
                     "<HTML>" +
-                        "<HEAD>" +
-                            "<TITLE>Help!</TITLE>" +
-                        "</HEAD>" +
-                        "<H1>This is a help page!</H1>" +
-                        "<BODY>please type a correctly formated URL into the search bar (Example: http://www.mtu.edu )</BODY>");
+                    "<HEAD>" +
+                    "<TITLE>Help!</TITLE>" +
+                    "</HEAD>" +
+                    "<H1>This is a help page!</H1>" +
+                    "<BODY>please type a correctly formated URL into the search bar (Example: http://www.mtu.edu )</BODY>");
         });
 
         toolbar.getChildren().addAll(back, forward, URLLabel, URLfield, search, help);
@@ -172,7 +172,7 @@ public class WebBrowser extends Application {
         borderPane.setBottom(statusHBox);
         borderPane.setTop(makeToolBar());
         //sets button url search
-        webEngine.load("http://www.google.com");
+        //webEngine.load("http://www.google.com");
         statusbar.setText("This is the statusBar");
 
         webEngine.getLoadWorker().stateProperty().addListener(
@@ -184,8 +184,8 @@ public class WebBrowser extends Application {
                         }
                     }
                 });
-
         Scene scene = new Scene(borderPane, 800, 600);
+        webEngine.load(getParameter(0));
         primaryStage.setScene(scene);
         primaryStage.setTitle("CS1122 Web Browser");
         primaryStage.show();
