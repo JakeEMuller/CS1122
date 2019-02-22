@@ -1,6 +1,16 @@
+import com.sun.javafx.geom.BaseBounds;
+import com.sun.javafx.geom.transform.BaseTransform;
+import com.sun.javafx.jmx.MXNodeAlgorithm;
+import com.sun.javafx.jmx.MXNodeAlgorithmContext;
+import com.sun.javafx.sg.prism.NGNode;
 import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -15,12 +25,15 @@ public class Problem1 extends Application {
         Group root = new Group();
         Scene scene = new Scene(root, 600, 500);
 
+
+
+
         //draws the sky
         Rectangle sky = new Rectangle();
         sky.setX(0);
         sky.setY(0);
-        sky.setHeight(1200);
-        sky.setWidth(1200);
+        sky.setHeight(6000);
+        sky.setWidth(6000);
         sky.setStroke(Color.SKYBLUE);
         sky.setFill(Color.SKYBLUE);
         root.getChildren().add(sky);
@@ -38,8 +51,8 @@ public class Problem1 extends Application {
         Rectangle grass = new Rectangle();
         grass.setX(0);
         grass.setY(350);
-        grass.setWidth(600);
-        grass.setHeight(200);
+        grass.setWidth(6000);
+        grass.setHeight(6000);
         grass.setFill(Color.GREEN);
         root.getChildren().add(grass);
 
@@ -117,8 +130,10 @@ public class Problem1 extends Application {
         horPane.setStroke(Color.BLACK);
         root.getChildren().add(horPane);
 
+
         stage.setTitle("House");
         stage.setScene( scene );
         stage.show();
+
     }
 }
