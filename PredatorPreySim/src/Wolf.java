@@ -5,7 +5,19 @@ public class Wolf extends Animal {
     }
 
     public void eat(){
+        int [] allX = new int[getSimulator().getCurrentMoose().size()];
+        int [] allY = new int[getSimulator().getCurrentMoose().size()];
+        int wolfX = getLocationX();
+        int wolfY = getLocationY();
 
+        for (Moose moose: getSimulator().getCurrentMoose()) {
+            int mooseX = moose.getLocationX();
+            int mooseY = moose.getLocationY();
+            if(mooseX == wolfX & mooseY == wolfY) {
+                moose.die();
+                setEnergy(getEnergy() + getSimulator().getEnergyGainFromEatingMoose());
+            }
+        }
     }
 
     public Wolf reproduce(){
