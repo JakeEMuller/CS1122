@@ -20,6 +20,7 @@ public abstract class Simulator {
     // Current populations
     private ArrayList<Wolf> currentWolfs = new ArrayList<>();
     private ArrayList<Moose> currentMoose = new ArrayList<>();
+    private ArrayList<Grass> currentGrass = new ArrayList<>();
 
     // Initial energy level in all animals
     private double initialEnergy = 100;
@@ -37,8 +38,6 @@ public abstract class Simulator {
     // Energy gain from eating moose.
     // Moose dies when eaten
     private double energyGainFromEatingMoose = 3.0;
-
-
 
 
     // -----------------------------------------------------------------------
@@ -148,7 +147,15 @@ public abstract class Simulator {
     public void setCurrentMoose(ArrayList<Moose> currentMoose) {
         this.currentMoose = currentMoose;
     }
-    //
+
+    public ArrayList<Grass> getCurrentGrass() {
+        return currentGrass;
+    }
+
+    public void setCurrentGrass(ArrayList<Grass> currentGrass) {
+        this.currentGrass = currentGrass;
+    }
+
 
     public double getInitialEnergy() {
         return initialEnergy;

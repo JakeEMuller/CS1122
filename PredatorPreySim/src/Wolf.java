@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Wolf extends Animal {
 
     public Wolf(Simulator simulator){
@@ -5,8 +7,6 @@ public class Wolf extends Animal {
     }
 
     public void eat(){
-        int [] allX = new int[getSimulator().getCurrentMoose().size()];
-        int [] allY = new int[getSimulator().getCurrentMoose().size()];
         int wolfX = getLocationX();
         int wolfY = getLocationY();
 
@@ -30,7 +30,11 @@ public class Wolf extends Animal {
     }
 
     public boolean die(){
+        ArrayList<Wolf> removeWolf;
         if(getEnergy() <= 0){
+            removeWolf = getSimulator().getCurrentWolfs();
+            removeWolf.remove(this);
+            getSimulator().setCurrentWolfs(removeWolf);
         }
         return Boolean.parseBoolean(null);
     }

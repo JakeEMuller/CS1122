@@ -21,16 +21,21 @@ public class Test {
 
             @Override
             public void animalsDie() {
-
+                for (Wolf wolf : getCurrentWolfs()) {
+                    wolf.die();
+                }
+                for (Moose moose : getCurrentMoose()) {
+                    moose.die();
+                }
             }
 
             @Override
             public void animalsEat() {
                 for (Wolf wolf : getCurrentWolfs()) {
-                   wolf.
+                    wolf.eat();
                 }
                 for (Moose moose : getCurrentMoose()) {
-
+                    moose.eat();
                 }
             }
 
@@ -77,6 +82,17 @@ public class Test {
             Moose moose = new Moose(simulator);
             ArrayList<Moose> intialWolfs = simulator.getCurrentMoose();
             intialWolfs.add(moose);
+        }
+        for (int i = 0; i <= simulator.getMaxX(); i++){
+            for(int j = 0; j <= simulator.getMaxY(); j++){
+                Grass grass = new Grass(simulator);
+                grass.setLocationX(i);
+                grass.setLocationY(j);
+                ArrayList<Grass> setGrass;
+                setGrass = simulator.getCurrentGrass();
+                setGrass.add(grass);
+                simulator.setCurrentGrass(setGrass);
+            }
         }
 
     }
