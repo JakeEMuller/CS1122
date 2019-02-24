@@ -17,7 +17,6 @@ public class ChangeFont extends Application {
         // sets up border pane
         BorderPane borderPane = new BorderPane();
 
-
         //set up text tester
         TextArea tester = new TextArea();
         tester.setText("adoifuakjshygoeaup9sdlkgahsre[0");

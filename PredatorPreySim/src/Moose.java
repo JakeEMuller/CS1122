@@ -7,6 +7,16 @@ public class Moose extends Animal {
     }
 
     public void eat(){
+        int mooseX = getLocationX();
+        int mooseY = getLocationY();
+        for (Grass grass: getSimulator().getCurrentGrass()) {
+            int grassX = grass.getLocationX();
+            int grassY = grass.getLocationY();
+            if(grassX == mooseX & grassY == mooseY) {
+                grass.getEaten();
+                return;
+            }
+        }
 
     }
 

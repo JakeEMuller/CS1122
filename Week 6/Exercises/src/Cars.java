@@ -4,14 +4,19 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 
 public class Cars extends Application {
 
     public void start(Stage primaryStage) throws Exception {
+
+
         Group root = new Group();
 
         //load images

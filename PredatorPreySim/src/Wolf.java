@@ -10,12 +10,14 @@ public class Wolf extends Animal {
         int wolfX = getLocationX();
         int wolfY = getLocationY();
 
+        // Determine if there is a Moose on the same square as the wolf
         for (Moose moose: getSimulator().getCurrentMoose()) {
             int mooseX = moose.getLocationX();
             int mooseY = moose.getLocationY();
             if(mooseX == wolfX & mooseY == wolfY) {
                 moose.die();
                 setEnergy(getEnergy() + getSimulator().getEnergyGainFromEatingMoose());
+                return;
             }
         }
     }
