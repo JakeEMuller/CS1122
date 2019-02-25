@@ -25,44 +25,135 @@ public class Grass {
 
     public void spread() {
         if (getCurrentGrowth() >= 10) {
-            for (int i = 0; i < 9; i++) {
-                Grass newGrass = new Grass(simulator);
-                setCurrentGrowth(10);
-                //Choose a space for the Grass to spread too
-                int xCord = getLocationX(); // x location of original grass
-                int yCord = getLocationY(); // y location of original grass
-                if (xCord == 0) {
-                    newGrass.setLocationX(xCord + 1);
-                } else if (xCord == simulator.getMaxX()) {
-                    setLocationX(xCord - 1);
-                } else {
-                    int rando = (int) (Math.random() * 3) - 1;
-                    newGrass.setLocationX(xCord + rando);
-                }
-                if (yCord == 0) {
-                    newGrass.setLocationY(yCord + 1);
-                } else if (yCord == simulator.getMaxY()) {
-                    newGrass.setLocationY(yCord - 1);
-                } else {
-                    int rando = (int) (Math.random() * 3) - 1;
-                    newGrass.setLocationY(yCord + rando);
-                }
-                int newGrassX = newGrass.getLocationX();
-                int newGrassY = newGrass.getLocationY();
+            setCurrentGrowth(2);
+            boolean isLeft = false;
+            boolean isRight = false;
+            boolean isAbove = false;
+            boolean isBelow = false;
+            boolean leftUp = false;
+            boolean rightUp = false;
+            boolean leftDown = false;
+            boolean rightDown = false;
 
-                //determines if there is already grass in the space its moving too
-                for (Grass grass : simulator.getCurrentGrass()) {
-                    int isThereX = grass.getLocationX();
-                    int isThereY = grass.getLocationY();
-                    if (newGrassX != isThereX & newGrassY != isThereY) {
-                        ArrayList<Grass> temp = new ArrayList<>();
-                        temp = simulator.getCurrentGrass();
-                        temp.add(newGrass);
-                        simulator.setCurrentGrass(temp); //adds grass to the world
-                    }
-                }
+            Grass newGrass = new Grass(simulator);
+            int xCord = getLocationX(); // x location of original grass
+            int yCord = getLocationY(); // y location of original grass
 
+            //checks to see if surrounding tiles are filled with grass
+            for (int j = 0; j < simulator.getCurrentGrass().size(); j++) {
+
+                Grass grass = simulator.getCurrentGrass().get(j);
+
+                if (xCord + 1 == grass.getLocationX() & yCord == grass.getLocationY()) {
+                    isRight = true;
+                }
+                if (xCord - 1 == grass.getLocationX() & yCord == grass.getLocationY()) {
+                    isLeft = true;
+                }
+                if (yCord - 1 == grass.getLocationY() & xCord == grass.getLocationX()) {
+                    isAbove = true;
+                }
+                if (yCord + 1 == grass.getLocationY() & xCord == grass.getLocationX()) {
+                    isBelow = true;
+                }
+                if (xCord + 1 == grass.getLocationX() & yCord - 1 == grass.getLocationY()) {
+                    rightUp = true;
+                }
+                if (xCord + 1 == grass.getLocationX() & yCord + 1 == grass.getLocationY()) {
+                    rightDown = true;
+                }
+                if (xCord - 1 == grass.getLocationX() & yCord - 1 == grass.getLocationY()) {
+                    leftUp = true;
+                }
+                if (xCord - 1 == grass.getLocationX() & yCord + 1 == grass.getLocationY()) {
+                    leftDown = true;
+                }
             }
+
+            //if there is no grass in one of the surrounding spaces it is filled
+            if (isAbove == false) {
+                if (yCord != 1) {
+                    newGrass.setLocationX(xCord);
+                    newGrass.setLocationY(yCord - 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                   // System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (isBelow == false) {
+                if (yCord != simulator.getMaxY()) {
+                    newGrass.setLocationX(xCord);
+                    newGrass.setLocationY(yCord + 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                   // System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (isRight == false) {
+                if (xCord != simulator.getMaxX()) {
+                    newGrass.setLocationX(xCord + 1);
+                    newGrass.setLocationY(yCord);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                   // System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (isLeft == false) {
+                if (xCord != 1) {
+                    newGrass.setLocationX(xCord - 1);
+                    newGrass.setLocationY(yCord);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                   // System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (rightUp == false) {
+                if (xCord != simulator.getMaxX() & yCord != 1) {
+                    newGrass.setLocationX(xCord + 1);
+                    newGrass.setLocationY(yCord - 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                   // System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (rightDown == false) {
+                if (xCord != simulator.getMaxX() & yCord != simulator.getMaxY()) {
+                    newGrass.setLocationX(xCord + 1);
+                    newGrass.setLocationY(yCord + 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                    //System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (leftUp == false) {
+                if (xCord != 1 & yCord != 1) {
+                    newGrass.setLocationX(xCord - 1);
+                    newGrass.setLocationY(yCord - 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                    //System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+            if (leftDown == false) {
+                if (xCord != 1 & yCord != simulator.getMaxY()) {
+                    newGrass.setLocationX(xCord - 1);
+                    newGrass.setLocationY(yCord + 1);
+                    ArrayList<Grass> temp = simulator.getCurrentGrass();
+                    temp.add(newGrass);
+                    //System.out.println(newGrass.locationX + " " + newGrass.getLocationY());
+                    simulator.setCurrentGrass(temp);
+                }
+            }
+
+
+
         }
 
     }

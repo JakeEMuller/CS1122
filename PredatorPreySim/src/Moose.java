@@ -2,26 +2,30 @@ import java.util.ArrayList;
 
 public class Moose extends Animal {
 
-    public Moose(Simulator simulator){
+    public Moose(Simulator simulator) {
         super(simulator);
     }
 
-    public void eat(){
+    public void eat() {
         int mooseX = getLocationX();
         int mooseY = getLocationY();
-        for (Grass grass: getSimulator().getCurrentGrass()) {
+        //gos through every grass object and checks to see if there is one in the vacinity for the moose to eat
+        for (int i = 0; i < getSimulator().getCurrentGrass().size(); i++) {
+            Grass grass = getSimulator().getCurrentGrass().get(i);
             int grassX = grass.getLocationX();
             int grassY = grass.getLocationY();
-            if(grassX == mooseX & grassY == mooseY) {
+            //if the moose finds grass then it eats it and its energy gos up
+            if (grassX == mooseX & grassY == mooseY) {
                 grass.getEaten();
-                return;
+                setEnergy(getEnergy() + getSimulator().getEnergyGainFromEatingGrass());
             }
         }
 
-    }
 
-    public Moose reproduce(){
-        if( getEnergy() >= 200){
+    }
+    //if the moose has a high enough energy level then it will reproduce
+    public Moose reproduce() {
+        if (getEnergy() >= 200) {
             setEnergy(getSimulator().getInitialEnergy());
             Moose moose = new Moose(getSimulator());
             return moose;
@@ -29,13 +33,14 @@ public class Moose extends Animal {
         return null;
     }
 
-    public boolean die(){
+    //if the moose has a low enough energy level it will die
+    public boolean die() {
         ArrayList<Moose> removeMoose;
-        if(getEnergy() <= 0) {
-             removeMoose = getSimulator().getCurrentMoose();
-             removeMoose.remove(this);
-             getSimulator().setCurrentMoose(removeMoose);
-         }
+        if (getEnergy() <= 0) {
+            removeMoose = getSimulator().getCurrentMoose();
+            removeMoose.remove(this);
+            getSimulator().setCurrentMoose(removeMoose);
+        }
         return Boolean.parseBoolean(null);
     }
 }

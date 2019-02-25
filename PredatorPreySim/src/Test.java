@@ -20,20 +20,25 @@ public class Test {
 
             @Override
             public void animalsDie() {
-                for (Wolf wolf : getCurrentWolfs()) {
+                for(int i = 0; i < getCurrentWolfs().size(); i++){
+                    Wolf wolf = getCurrentWolfs().get(i);
                     wolf.die();
                 }
-                for (Moose moose : getCurrentMoose()) {
+                for(int i = 0; i < getCurrentMoose().size(); i++){
+                    Moose moose = getCurrentMoose().get(i);
                     moose.die();
                 }
             }
 
             @Override
             public void animalsEat() {
-                for (Wolf wolf : getCurrentWolfs()) {
+                for(int i = 0; i < getCurrentWolfs().size(); i++){
+                    Wolf wolf = getCurrentWolfs().get(i);
                     wolf.eat();
                 }
-                for (Moose moose : getCurrentMoose()) {
+
+                for(int i = 0; i < getCurrentMoose().size(); i++){
+                    Moose moose = getCurrentMoose().get(i);
                     moose.eat();
                 }
             }
@@ -41,7 +46,8 @@ public class Test {
 
             @Override
             public void animalsReproduce() {
-                for (Wolf wolf : getCurrentWolfs()) {
+                for(int i = 0; i < getCurrentWolfs().size(); i++){
+                    Wolf wolf = getCurrentWolfs().get(i);
                     Wolf newWolf = wolf.reproduce();
                     if (newWolf != null) {
                         ArrayList<Wolf> temp = getCurrentWolfs();
@@ -49,7 +55,9 @@ public class Test {
                         setCurrentWolfs(temp);
                     }
                 }
-                for (Moose moose : getCurrentMoose()) {
+
+                for(int i = 0; i < getCurrentMoose().size(); i++){
+                    Moose moose = getCurrentMoose().get(i);
                     Moose newMoose = moose.reproduce();
                     if (newMoose != null) {
                         ArrayList<Moose> temp = getCurrentMoose();
@@ -57,24 +65,33 @@ public class Test {
                         setCurrentMoose(temp);
                     }
                 }
+
             }
 
             @Override
             public void grassGrows() {
-                for (Grass grass : getCurrentGrass()) {
+                for(int i = 0; i < getCurrentGrass().size(); i++){
+                    Grass grass = getCurrentGrass().get(i);
                     grass.grow();
                     grass.spread();
                 }
+
+//                for (Grass grass : getCurrentGrass()) {
+//                    grass.grow();
+//                    grass.spread();
+//                }
             }
 
             @Override
             public void run() {
-                for (int i = 0; i <= 500; i++) {
+                int i = 1;
+                while( getCurrentWolfs().size() != 0 & getCurrentMoose().size() != 0 ) {
                     tick();
-                    System.out.println("there are " + getCurrentMoose().size() + " Moose");
-                    System.out.println("there are " + getCurrentWolfs().size() + " Wolfs");
-                    System.out.println("there are " + getCurrentGrass().size() + " Grass");
-                    System.out.println(i);
+                    System.out.println("Tick Number: " + i);
+                    System.out.println("There are " + getCurrentMoose().size() + " Moose");
+                    System.out.println("There are " + getCurrentWolfs().size() + " Wolves\n");
+                    // System.out.println("there are " + getCurrentGrass().size() + " Grass");
+                    i++;
                 }
 
 
@@ -93,11 +110,12 @@ public class Test {
             ArrayList<Moose> intialWolfs = simulator.getCurrentMoose();
             intialWolfs.add(moose);
         }
-        for (int i = 0; i < simulator.getMaxX(); i++) {
-            for (int j = 0; j < simulator.getMaxY(); j++) {
+        for (int i = 1; i <= simulator.getMaxX(); i++) {
+            for (int j = 1; j <= simulator.getMaxY(); j++) {
                 Grass grass = new Grass(simulator);
                 grass.setLocationX(i);
                 grass.setLocationY(j);
+                System.out.printf("(%d,%d)\n",i,j);
                 ArrayList<Grass> setGrass;
                 setGrass = simulator.getCurrentGrass();
                 setGrass.add(grass);
@@ -107,6 +125,5 @@ public class Test {
 
         //this is what starts the simulation
         simulator.run();
-
     }
 }

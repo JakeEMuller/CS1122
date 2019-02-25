@@ -33,7 +33,7 @@ public abstract class Simulator {
 
     // Energy gain from eating grass.
     // Also amount by which grass is decreased when eaten.
-    private double energyGainFromEatingGrass = 1.0;
+    private double energyGainFromEatingGrass = 2.0;
 
     // Energy gain from eating moose.
     // Moose dies when eaten
