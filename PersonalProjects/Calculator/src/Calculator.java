@@ -8,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
 public class Calculator extends Application {
@@ -91,7 +89,7 @@ public class Calculator extends Application {
         equals.setOnAction(e-> {
             String infix = enter.getText();
             try {
-                int number = (int) engine.eval(infix);
+                double number = (double) engine.eval(infix);
                 enter.setText(String.valueOf(number));
             } catch (ScriptException e1) {
                 e1.printStackTrace();
