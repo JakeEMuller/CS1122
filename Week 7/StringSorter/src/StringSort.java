@@ -1,3 +1,7 @@
+
+
+
+
 public class StringSort  {
     public static String sort(String string){
         if(string.length() == 1){
@@ -11,6 +15,6 @@ public class StringSort  {
     }
 
     public static void main(String[] args) {
-        System.out.println(StringSort.sort("Gart is Gay"));
+        System.out.println(StringSort.sort("Hello!"));
     }
 }
