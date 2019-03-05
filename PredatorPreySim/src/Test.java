@@ -82,7 +82,7 @@ public class Test {
 //                }
             }
 
-            @Override
+            @Override // sometimes it runs into the 30000's other times it only gets too 6000
             public void run() {
                 int i = 1;
                 while( getCurrentWolfs().size() != 0 & getCurrentMoose().size() != 0 ) {
@@ -93,6 +93,7 @@ public class Test {
                     // System.out.println("there are " + getCurrentGrass().size() + " Grass");
                     i++;
                 }
+
 
 
             }

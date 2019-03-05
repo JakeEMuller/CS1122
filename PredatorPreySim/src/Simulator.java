@@ -14,8 +14,8 @@ public abstract class Simulator {
     private final int maxY = 30;
 
     // Initial populations
-    private int initialMoose = 500;
-    private int initialWolves = 5;
+    private int initialMoose = 250;
+    private int initialWolves = 2;
 
     // Current populations
     private ArrayList<Wolf> currentWolfs = new ArrayList<>();
@@ -26,18 +26,18 @@ public abstract class Simulator {
     private double initialEnergy = 100;
 
     // Energy cost of movement
-    private double movementCost = 1.0;
+    private double movementCost = .5;
 
     // Amount grass grows every tick
     private double grassGrowthRate = 2.0;
 
     // Energy gain from eating grass.
     // Also amount by which grass is decreased when eaten.
-    private double energyGainFromEatingGrass = 2.0;
+    private double energyGainFromEatingGrass = 1.2;
 
     // Energy gain from eating moose.
     // Moose dies when eaten
-    private double energyGainFromEatingMoose = 3.0;
+    private double energyGainFromEatingMoose = 2;
 
 
     // -----------------------------------------------------------------------

@@ -34,7 +34,7 @@ public class Moose extends Animal {
      * @return the new animal
      */
     public Moose reproduce() {
-        if (getEnergy() >= 200) {
+        if (getEnergy() >= 150) {
             setEnergy(getSimulator().getInitialEnergy());
             Moose moose = new Moose(getSimulator());
             return moose;

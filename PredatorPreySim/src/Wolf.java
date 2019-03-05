@@ -34,7 +34,7 @@ public class Wolf extends Animal {
      * @return the new animal
      */
     public Wolf reproduce() {
-        if (getEnergy() >= 200) {
+        if (getEnergy() >= 600) {
             setEnergy(getSimulator().getInitialEnergy());
             Wolf wolf = new Wolf(getSimulator());
             return wolf;
