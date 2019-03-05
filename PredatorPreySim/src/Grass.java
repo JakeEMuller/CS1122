@@ -17,12 +17,21 @@ public class Grass {
     // ---------------------------------------
     // METHODS
     // ---------------------------------------
+
+    /**
+     * Every round the grass will grow by grassGrowthRate
+     * set by the Simulator
+     */
     public void grow() {
         double current = getCurrentGrowth();
         current += simulator.getGrassGrowthRate();
         setCurrentGrowth(current);
     }
 
+    /**
+     * If the grass current height is 10 or above
+     * then the grass will spread to all surrounding tiles
+     */
     public void spread() {
         if (getCurrentGrowth() >= 10) {
             setCurrentGrowth(2);
@@ -158,6 +167,11 @@ public class Grass {
 
     }
 
+    /**
+     * When a Moose is in the same location the moose eats the grass
+     * the grass height decreases by energyGainFromEatingGrass defined by
+     * the Simulator
+     */
     public void getEaten() {
         if (getCurrentGrowth() <= 0) {
             ArrayList<Grass> temp;

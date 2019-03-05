@@ -5,7 +5,11 @@ public class Moose extends Animal {
     public Moose(Simulator simulator) {
         super(simulator);
     }
-
+    /**
+     * Increases the animal's energy by consuming a food source.
+     * Moose consumes grass if present in the same location. Decreasing the grass
+     * by grassGrowthRate.
+     */
     public void eat() {
         int mooseX = getLocationX();
         int mooseY = getLocationY();
@@ -23,7 +27,12 @@ public class Moose extends Animal {
 
 
     }
-    //if the moose has a high enough energy level then it will reproduce
+    /**
+     * If the animal's energy > 200.0, the spawn a new animal.
+     * Both animals get half the total energy.
+     *
+     * @return the new animal
+     */
     public Moose reproduce() {
         if (getEnergy() >= 200) {
             setEnergy(getSimulator().getInitialEnergy());
@@ -33,7 +42,11 @@ public class Moose extends Animal {
         return null;
     }
 
-    //if the moose has a low enough energy level it will die
+    /**
+     * Animals with energy < 0.0 die and are removed from the game.
+     *
+     * @return the dead animal or null if animal survives.
+     */
     public boolean die() {
         ArrayList<Moose> removeMoose;
         if (getEnergy() <= 0) {

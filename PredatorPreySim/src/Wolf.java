@@ -5,7 +5,10 @@ public class Wolf extends Animal {
     public Wolf(Simulator simulator) {
         super(simulator);
     }
-
+    /**
+     * Increases the animal's energy by consuming a food source.
+     * Wolf consumes moose if in the same location. Killing the moose.
+     */
     public void eat() {
         int wolfX = getLocationX();
         int wolfY = getLocationY();
@@ -24,7 +27,12 @@ public class Wolf extends Animal {
         }
 
     }
-
+    /**
+     * If the animal's energy > 200.0, the spawn a new animal.
+     * Both animals get half the total energy.
+     *
+     * @return the new animal
+     */
     public Wolf reproduce() {
         if (getEnergy() >= 200) {
             setEnergy(getSimulator().getInitialEnergy());
@@ -33,7 +41,11 @@ public class Wolf extends Animal {
         }
         return null;
     }
-
+    /**
+     * Animals with energy < 0.0 die and are removed from the game.
+     *
+     * @return the dead animal or null if animal survives.
+     */
     public boolean die() {
         ArrayList<Wolf> removeWolf;
         if (getEnergy() <= 0) {
