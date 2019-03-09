@@ -20,7 +20,6 @@ public class CalculatePi implements FindPi {
             long temp = gcd(long1+1, long2+1);
             if(temp == 1){
                 count++;
-                System.out.println(count);
             }
         }
         double pi;
@@ -37,7 +36,7 @@ public class CalculatePi implements FindPi {
 
     public static void main(String[] args) {
         CalculatePi test = new CalculatePi();
-        System.out.println(test.calculatePi(1000000,1000000));
+        System.out.println("Pi is approximately: " + test.calculatePi(1000000,1000000));
     }
 }
 
