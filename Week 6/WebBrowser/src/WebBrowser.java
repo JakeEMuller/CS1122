@@ -141,8 +141,12 @@ public class WebBrowser extends Application {
                     "<H1>This is a help page!</H1>" +
                     "<BODY>please type a correctly formated URL into the search bar (Example: http://www.mtu.edu )</BODY>");
         });
+        Button home = new Button("home");
+        home.setOnAction(e-> {
+            webEngine.load("http://www.mtu.edu");
+        });
 
-        toolbar.getChildren().addAll(back, forward, URLLabel, URLfield, search, help);
+        toolbar.getChildren().addAll(back, forward,home, URLLabel, URLfield, search, help);
         return toolbar;
     }
 
