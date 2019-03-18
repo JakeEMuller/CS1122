@@ -99,6 +99,8 @@ public class Test {
             }
         };
 
+        simulator.setEnergyGainFromEatingGrass(1.2);
+        simulator.setEnergyGainFromEatingMoose(2);
         // create the initial set of wolfs and moose and populates the world with grass
         for (int i = 0; i < simulator.getInitialWolves(); i++) {
             Wolf wolf = new Wolf(simulator);

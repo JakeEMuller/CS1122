@@ -40,36 +40,13 @@ public abstract class Animal {
      *
      * @return the dead animal or null if animal survives.
      */
-    public abstract boolean die();
+    public abstract Animal die();
 
     /**
      * Animal moves to an adjacent area.
      * This subtracts movementCost from energy
      */
-    public void move() {
-        int xCord = getLocationX();
-        int yCord = getLocationY();
-        if (xCord == 0) {
-            setLocationX(xCord + 1);
-        } else if (xCord == simulator.getMaxX()) {
-            setLocationX(xCord - 1);
-        } else {
-            int rando = (int) (Math.random()*3) -1;
-
-            setLocationX(xCord + rando);
-        }
-        if (yCord == 0) {
-            setLocationY(yCord + 1);
-        } else if (yCord == simulator.getMaxY()) {
-            setLocationY(yCord - 1);
-        } else {
-            int rando = (int) (Math.random()*3) -1;
-
-            setLocationY(yCord + rando);
-        }
-        setEnergy(getEnergy() - simulator.getMovementCost());
-    }
-
+    public abstract void move();
     // -----------------------------------------------------------------------
     // CONSTRUCTOR
     // -----------------------------------------------------------------------

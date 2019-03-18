@@ -5,6 +5,37 @@ public class Wolf extends Animal {
     public Wolf(Simulator simulator) {
         super(simulator);
     }
+
+
+
+    /**
+     * Animal moves to an adjacent area.
+     * This subtracts movementCost from energy
+     */
+    public void move() {
+        int xCord = getLocationX();
+        int yCord = getLocationY();
+        if (xCord == 0) {
+            setLocationX(xCord + 1);
+        } else if (xCord == getSimulator().getMaxX()) {
+            setLocationX(xCord - 1);
+        } else {
+            int rando = (int) (Math.random() * 3) - 1;
+
+            setLocationX(xCord + rando);
+        }
+        if (yCord == 0) {
+            setLocationY(yCord + 1);
+        } else if (yCord == getSimulator().getMaxY()) {
+            setLocationY(yCord - 1);
+        } else {
+            int rando = (int) (Math.random() * 3) - 1;
+
+            setLocationY(yCord + rando);
+        }
+        setEnergy(getEnergy() - getSimulator().getMovementCost());
+    }
+
     /**
      * Increases the animal's energy by consuming a food source.
      * Wolf consumes moose if in the same location. Killing the moose.
@@ -46,14 +77,14 @@ public class Wolf extends Animal {
      *
      * @return the dead animal or null if animal survives.
      */
-    public boolean die() {
+    public Wolf die() {
         ArrayList<Wolf> removeWolf;
         if (getEnergy() <= 0) {
             removeWolf = getSimulator().getCurrentWolfs();
             removeWolf.remove(this);
             getSimulator().setCurrentWolfs(removeWolf);
         }
-        return Boolean.parseBoolean(null);
+        return null;
     }
 
 

@@ -5,6 +5,36 @@ public class Moose extends Animal {
     public Moose(Simulator simulator) {
         super(simulator);
     }
+
+    /**
+     * Animal moves to an adjacent area.
+     * This subtracts movementCost from energy
+     */
+    public void move() {
+        int xCord = getLocationX();
+        int yCord = getLocationY();
+        if (xCord == 0) {
+            setLocationX(xCord + 1);
+        } else if (xCord == getSimulator().getMaxX()) {
+            setLocationX(xCord - 1);
+        } else {
+            int rando = (int) (Math.random() * 3) - 1;
+
+            setLocationX(xCord + rando);
+        }
+        if (yCord == 0) {
+            setLocationY(yCord + 1);
+        } else if (yCord == getSimulator().getMaxY()) {
+            setLocationY(yCord - 1);
+        } else {
+            int rando = (int) (Math.random() * 3) - 1;
+
+            setLocationY(yCord + rando);
+        }
+        setEnergy(getEnergy() - getSimulator().getMovementCost());
+    }
+
+
     /**
      * Increases the animal's energy by consuming a food source.
      * Moose consumes grass if present in the same location. Decreasing the grass
@@ -27,6 +57,7 @@ public class Moose extends Animal {
 
 
     }
+
     /**
      * If the animal's energy > 200.0, the spawn a new animal.
      * Both animals get half the total energy.
@@ -47,13 +78,13 @@ public class Moose extends Animal {
      *
      * @return the dead animal or null if animal survives.
      */
-    public boolean die() {
+    public Moose die() {
         ArrayList<Moose> removeMoose;
         if (getEnergy() <= 0) {
             removeMoose = getSimulator().getCurrentMoose();
             removeMoose.remove(this);
             getSimulator().setCurrentMoose(removeMoose);
         }
-        return Boolean.parseBoolean(null);
+        return null;
     }
 }
