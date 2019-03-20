@@ -7,7 +7,6 @@ public class Wolf extends Animal {
     }
 
 
-
     /**
      * Animal moves to an adjacent area.
      * This subtracts movementCost from energy
@@ -58,6 +57,7 @@ public class Wolf extends Animal {
         }
 
     }
+
     /**
      * If the animal's energy > 200.0, the spawn a new animal.
      * Both animals get half the total energy.
@@ -72,6 +72,7 @@ public class Wolf extends Animal {
         }
         return null;
     }
+
     /**
      * Animals with energy < 0.0 die and are removed from the game.
      *

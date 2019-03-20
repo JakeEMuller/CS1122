@@ -14,7 +14,7 @@ public abstract class Simulator {
     private final int maxY = 30;
 
     // Initial populations
-    private int initialMoose = 500;
+    private int initialMoose = 700;
     private int initialWolves = 5;
 
     // Current populations
@@ -33,7 +33,7 @@ public abstract class Simulator {
 
     // Energy gain from eating grass.
     // Also amount by which grass is decreased when eaten.
-    private double energyGainFromEatingGrass = 1.7;
+    private double energyGainFromEatingGrass = 1.2;
 
     // Energy gain from eating moose.
     // Moose dies when eaten
@@ -103,6 +103,7 @@ public abstract class Simulator {
         animalsEat();
         animalsReproduce();
         grassGrows();
+
     }
 
     // -----------------------------------------------------------------------
