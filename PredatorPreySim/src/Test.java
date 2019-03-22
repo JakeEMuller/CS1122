@@ -88,7 +88,6 @@ public class Test {
                 System.out.println("There are " + getCurrentMoose().size() + " Moose");
                 System.out.println("There are " + getCurrentWolfs().size() + " Wolves\n");
                 // System.out.println("there are " + getCurrentGrass().size() + " Grass");
-                tick = i;
                 i++;
             }
 
@@ -103,9 +102,13 @@ public class Test {
     // ------------------------------------------------------
     public static void main(String[] args) throws Exception {
 
-
-        simulator.setEnergyGainFromEatingGrass(1.2);
+        simulator.setInitialEnergy(100);
+        simulator.setEnergyGainFromEatingGrass(2);
         simulator.setEnergyGainFromEatingMoose(2);
+        simulator.setInitialMoose(500);
+        simulator.setInitialWolves(5);
+        simulator.setMovementCost(1);
+
         // create the initial set of wolfs and moose and populates the world with grass
         for (int i = 0; i < simulator.getInitialWolves(); i++) {
             Wolf wolf = new Wolf(simulator);
@@ -123,7 +126,7 @@ public class Test {
                 Grass grass = new Grass(simulator);
                 grass.setLocationX(i);
                 grass.setLocationY(j);
-                System.out.printf("(%d,%d)\n",i,j);
+                //System.out.printf("(%d,%d)\n",i,j);
                 ArrayList<Grass> setGrass;
                 setGrass = simulator.getCurrentGrass();
                 setGrass.add(grass);

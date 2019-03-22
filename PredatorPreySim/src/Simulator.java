@@ -9,6 +9,8 @@ public abstract class Simulator {
     // INITIAL SETTINGS - These need to be adjusted to get simulation to work
     // The goal is to find settings for a sustainable wolf and moose population.
     // -----------------------------------------------------------------------
+
+    int tick = 0;
     // Size of Isle Royale
     private final int maxX = 30;
     private final int maxY = 30;
@@ -98,6 +100,7 @@ public abstract class Simulator {
 
     // Each iteration of the simulation is a tick
     public void tick() {
+        tick++;
         animalsMove();
         animalsDie();
         animalsEat();
