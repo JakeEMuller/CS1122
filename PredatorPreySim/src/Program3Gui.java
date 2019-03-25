@@ -167,7 +167,6 @@ public class Program3Gui extends Application {
         Scene scene = new Scene(borderPane,1200,800);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 }
 
