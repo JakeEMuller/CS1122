@@ -20,7 +20,7 @@ public class AlphabetSort {
             arr[min_idx] = arr[i];
             arr[i] = temp;
         }
-        System.out.println("selection sort " + Arrays.toString(arr));
+       // System.out.println("selection sort " + Arrays.toString(arr));
         return arr;
     }
 
@@ -31,7 +31,7 @@ public class AlphabetSort {
             int ascii = (int) array[i];
             result[i] = ascii;
         }
-        System.out.println("convert to ascii" + Arrays.toString(result));
+        //System.out.println("convert to ascii" + Arrays.toString(result));
         return result;
     }
 
@@ -42,7 +42,7 @@ public class AlphabetSort {
             char character = (char) array[i];
             result[i] = character;
         }
-        System.out.println("convert to char " + Arrays.toString(result));
+        //System.out.println("convert to char " + Arrays.toString(result));
         return result;
     }
 
@@ -58,7 +58,9 @@ public class AlphabetSort {
     public static void main(String[] args) {
         char[] test = {'b', 'y', 'e', 'a', 'u', 'r', 'l', 'i', 'o'};
         char[] newArray = sortCharacters(test);
-        System.out.println(Arrays.toString(newArray));
+        System.out.println("Before " + Arrays.toString(test));
+        System.out.println("After " + Arrays.toString(newArray));
+        System.out.println("desired [a, b, e, i, l, o, r, u, y]");
 
     }
 }
