@@ -132,6 +132,11 @@ public class MyArray<E> implements Iterable<E> {
     public static void main(String[] args) {
         MyArray<Integer> test = new MyArray<>();
         MyArray<Integer> test2 = new MyArray<>();
+        MyArray<Integer> failTest = new MyArray<>();
+
+        for(int j = 0; j < 5; j++){
+            failTest.set(j, new Integer(j));
+        }
 
         for(int i = 0; i < 16; i++ ){
             test2.set(i, new Integer(i));
@@ -144,5 +149,6 @@ public class MyArray<E> implements Iterable<E> {
         System.out.println(test2.toString());
         boolean temp = test.equals(test2);
         System.out.println(temp);
+        System.out.println(test.equals(failTest));
     }
 }
