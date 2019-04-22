@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class BinaryTree<E extends Comparable> {
 
@@ -69,8 +71,8 @@ public class BinaryTree<E extends Comparable> {
         public void visit(E value);
     }
 
-    public void preOrderTraversal(Node node, Visitor visitor){
-        if(node == null){
+    public void preOrderTraversal(Node node, Visitor visitor) {
+        if (node == null) {
             return;
         }
         visitor.visit(node.value);
@@ -79,8 +81,8 @@ public class BinaryTree<E extends Comparable> {
     }
 
 
-    public void postOrderTraversal(Node node, Visitor visitor){
-        if(node == null){
+    public void postOrderTraversal(Node node, Visitor visitor) {
+        if (node == null) {
             return;
         }
         postOrderTraversal(node.leftChild, visitor);
@@ -88,22 +90,25 @@ public class BinaryTree<E extends Comparable> {
         visitor.visit(node.value);
     }
 
+
+    //Find algorithm created for Week 17 exersises
     int findIndex = 0;
     E result = null;
-    public E findInSortOrder(int index){
+
+    public E findInSortOrder(int index) {
         inOrderTraversal(root, value -> {
             findIndex++;
-            if(findIndex == index){
+            if (findIndex == index) {
                 result = (E) value;
                 return;
             }
-        } );
+        });
         findIndex = 0;
         return result;
     }
 
     public void inOrderTraversal(Node node, Visitor visitor) {
-        if(node == null){
+        if (node == null) {
             return;
         }
         inOrderTraversal(node.leftChild, visitor);
@@ -111,6 +116,29 @@ public class BinaryTree<E extends Comparable> {
         inOrderTraversal(node.rightChild, visitor);
 
     }
+
+    public void depthFirstTraversal(Node subTreeRoot, Visitor visitor) {
+        Stack<Node> stack = new Stack<>();
+        stack.push(subTreeRoot);
+        while (!stack.isEmpty()) {
+            Node currentNode = stack.pop();
+            visitor.visit(currentNode.value);
+            if (currentNode.rightChild != null) stack.push(currentNode.rightChild);
+            if (currentNode.leftChild != null) stack.push(currentNode.leftChild);
+        }
+    }
+
+    public void breathFirstTraversal(Node subTreeRoot, Visitor visitor) {
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.add(subTreeRoot);
+        while (!queue.isEmpty()) {
+            Node currentNode = queue.remove();
+            visitor.visit(currentNode.value);
+            if (currentNode.leftChild != null) queue.add(currentNode.leftChild);
+            if (currentNode.rightChild != null) queue.add(currentNode.rightChild);
+        }
+    }
+
 
     public static void main(String[] args) {
         BinaryTree<Integer> tree = new BinaryTree<>();
@@ -124,19 +152,23 @@ public class BinaryTree<E extends Comparable> {
 //        tree.preOrderTraversal(tree.root, value -> {
 //            System.out.println(value);
 //        });
-        System.out.println("In order time");
-        tree.inOrderTraversal(tree.root, value -> {
-            System.out.println(value);
-        });
+//        System.out.println("In order time");
+//        tree.inOrderTraversal(tree.root, value -> {
+//            System.out.println(value);
+//        });
 //        System.out.println("post order time");
 //        tree.postOrderTraversal(tree.root, value -> {
 //            System.out.println(value);
 //        });
-        System.out.println("Find index testing");
-        System.out.println("5 expected: " + tree.findInSortOrder(4));
-        System.out.println("4 expected: " + tree.findInSortOrder(3));
-        System.out.println("7 expected: " + tree.findInSortOrder(5));
-        System.out.println("7 expected: " + tree.findInSortOrder(5));
+        System.out.println("depth first time");
+        tree.depthFirstTraversal(tree.root, value -> {
+            System.out.println(value);
+        });
+//        System.out.println("Find index testing");
+//        System.out.println("5 expected: " + tree.findInSortOrder(4));
+//        System.out.println("4 expected: " + tree.findInSortOrder(3));
+//        System.out.println("7 expected: " + tree.findInSortOrder(5));
+//        System.out.println("7 expected: " + tree.findInSortOrder(5));
     }
 
 }
