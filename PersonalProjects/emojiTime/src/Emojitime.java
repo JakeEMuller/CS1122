@@ -60,6 +60,8 @@ public class Emojitime {
                 result = result + ":regional_indicator_z: ";
             } else if(array[i] == ' '){
                 result = result + "  ";
+            } else if(array[i] == '!'){
+                result = result + ":exclamation:";
             } else {
                 result = result + array[i];
             }
