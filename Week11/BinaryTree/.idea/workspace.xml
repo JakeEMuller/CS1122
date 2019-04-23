@@ -13,7 +13,7 @@
     <session id="1209916316">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -58,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LinkedBinaryTreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1792">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="527">
+              <caret line="121" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="121" selection-end-column="5" />
               <folding>
                 <element signature="e#150#151#0" expanded="true" />
                 <element signature="e#177#178#0" expanded="true" />
@@ -157,8 +157,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555941292563" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555963158862" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Program4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -205,16 +205,15 @@
       <updated>1555334308257</updated>
       <workItem from="1555334311757" duration="3142000" />
       <workItem from="1555679149896" duration="6370000" />
-      <workItem from="1555888386245" duration="3441000" />
+      <workItem from="1555888386245" duration="3455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12953000" />
+    <option name="totallyTimeSpent" value="12967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24630873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -225,7 +224,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24504249" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24504249" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LinkedBinaryTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1792">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="527">
+          <caret line="121" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="e#150#151#0" expanded="true" />
             <element signature="e#177#178#0" expanded="true" />
