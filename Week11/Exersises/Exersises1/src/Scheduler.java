@@ -13,7 +13,7 @@ public class Scheduler {
         if(firstEvent == null){
             firstEvent = node;
         } else {
-            
+
         }
     }
 

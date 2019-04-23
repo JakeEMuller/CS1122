@@ -151,8 +151,18 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
         } else {
             return;
         }
-
     }
+
+//    public void add(E data){
+//        if(data == null){
+//            throw new IllegalArgumentException("value added was null");
+//        }
+//        if(getRoot() != null){
+//
+//        }
+//    }
+
+
 
     //might run into problems with getTo with if statements
     @Override
@@ -212,11 +222,13 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> test = new ArrayList<>();
-        test.add(0, 4);
-        test.add(0, 5);
-        test.add(0, 7);
-        System.out.println(test.toString());
+//        ArrayList<Integer> test = new ArrayList<>();
+//        test.add(0, 4);
+//        test.add(0, 5);
+//        test.add(0, 7);
+//        System.out.println(test.toString());
+        LinkedBinaryTreeNode<Integer> test = new LinkedBinaryTreeNode<>(5);
+
     }
 
 }
