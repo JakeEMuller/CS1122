@@ -112,18 +112,11 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
         });
         int result = height;
         height = 0;
-
-//        int height = 0;
-//        for(int i = 0; i < leafList.size(); i++){
-//            int leafHeight = leafList.get(i).getDepth();
-//            if( leafHeight >= height){
-//                height = leafHeight;
-//            }
-//        }
         return result;
     }
 
     private int size = 0;
+
     @Override
     public int size() {
         traverseInorder(visitor -> {
@@ -131,7 +124,7 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
         });
         int result = size;
         size = 0;
-        return size;
+        return result;
     }
 
     @Override
@@ -152,16 +145,6 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
             return;
         }
     }
-
-//    public void add(E data){
-//        if(data == null){
-//            throw new IllegalArgumentException("value added was null");
-//        }
-//        if(getRoot() != null){
-//
-//        }
-//    }
-
 
 
     //might run into problems with getTo with if statements
@@ -202,24 +185,43 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
 
     @Override
     public void traversePreorder(Visitor visitor) {
-        visitor.visit(this);
-        this.getLeft().traversePreorder(visitor);
-        this.getRight().traversePreorder(visitor);
+        BinaryTreeNode<E> node = this;
+        visitor.visit(node);
+        if (node.hasLeftChild()) {
+            this.getLeft().traversePreorder(visitor);
+        }
+        if (node.hasRightChild()) {
+            this.getRight().traversePreorder(visitor);
+        }
     }
 
     @Override
     public void traversePostorder(Visitor visitor) {
-        this.getLeft().traversePostorder(visitor);
-        this.getRight().traversePostorder(visitor);
+        BinaryTreeNode<E> node = this;
+        if(node.hasLeftChild()){
+            node.getLeft().traversePostorder(visitor);
+        }
+        if(node.hasRightChild()){
+            this.getRight().traversePostorder(visitor);
+        }
         visitor.visit(this);
     }
 
     @Override
     public void traverseInorder(Visitor visitor) {
-        this.getLeft().traverseInorder(visitor);
+        BinaryTreeNode<E> node = this;
+        if(node.hasLeftChild()){
+            this.getLeft().traverseInorder(visitor);
+        }
         visitor.visit(this);
-        this.getRight().traverseInorder(visitor);
+        if(node.hasRightChild()){
+            this.getRight().traverseInorder(visitor);
+        }
+
+
+
     }
+
 
     public static void main(String[] args) {
 //        ArrayList<Integer> test = new ArrayList<>();

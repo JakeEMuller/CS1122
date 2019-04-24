@@ -1,7 +1,7 @@
 public class Question<E> extends LinkedBinaryTreeNode<E> {
 
     public Question( E question){
-        super( question);
+        super(question);
 
     }
 

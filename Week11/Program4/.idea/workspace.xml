@@ -22,26 +22,26 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="6" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4860" />
-          <entry key="PLAIN_TEXT" value="125" />
+          <entry key="JAVA" value="7423" />
+          <entry key="PLAIN_TEXT" value="128" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.77470356">
+    <splitter split-orientation="horizontal" split-proportion="0.60981494">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Program4.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-663">
-                  <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+                <state relative-caret-position="293">
+                  <caret line="129" column="58" lean-forward="true" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -52,8 +52,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/LinkedBinaryTreeNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3280">
-                  <caret line="205" selection-start-line="205" selection-end-line="205" />
+                <state relative-caret-position="-818">
+                  <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#266#267#0" expanded="true" />
@@ -128,7 +128,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/BinaryTreeNode.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1568">
@@ -137,7 +137,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tree.data">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="96">
@@ -169,10 +169,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/LinkedBinaryTreeNode.java" />
         <option value="$PROJECT_DIR$/tree.data" />
-        <option value="$PROJECT_DIR$/src/Question.java" />
         <option value="$PROJECT_DIR$/src/Answer.java" />
+        <option value="$PROJECT_DIR$/src/LinkedBinaryTreeNode.java" />
+        <option value="$PROJECT_DIR$/src/Question.java" />
+        <option value="$PROJECT_DIR$/tree2.data" />
         <option value="$PROJECT_DIR$/src/Program4.java" />
       </list>
     </option>
@@ -213,7 +214,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556050199766" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556068338809" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -272,18 +273,18 @@
       <option name="presentableId" value="Default" />
       <updated>1555532546617</updated>
       <workItem from="1555532551566" duration="1092000" />
-      <workItem from="1555963424499" duration="14296000" />
+      <workItem from="1555963424499" duration="21457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15388000" />
+    <option name="totallyTimeSpent" value="22549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0852349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16577181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -292,8 +293,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3101983" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25070822" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,6 +321,28 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Answer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#90#91#0" expanded="true" />
+            <element signature="e#117#118#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BinaryTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1501">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tree.data">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -327,10 +350,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tree2.data">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LinkedBinaryTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3280">
-          <caret line="205" selection-start-line="205" selection-end-line="205" />
+        <state relative-caret-position="-818">
+          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#266#267#0" expanded="true" />
@@ -359,45 +398,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BinaryTreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1501">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Answer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="e#90#91#0" expanded="true" />
-            <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Program4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        <state relative-caret-position="293">
+          <caret line="129" column="58" lean-forward="true" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
