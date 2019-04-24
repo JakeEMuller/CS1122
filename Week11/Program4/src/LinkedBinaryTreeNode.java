@@ -3,10 +3,10 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import java.util.ArrayList;
 
 public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
-    E data;
-    BinaryTreeNode<E> parent;
-    BinaryTreeNode<E> leftChild;
-    BinaryTreeNode<E> rightChild;
+    private E data;
+    private BinaryTreeNode<E> parent;
+    private BinaryTreeNode<E> leftChild;
+    private BinaryTreeNode<E> rightChild;
 
 
     public LinkedBinaryTreeNode(E data) {
@@ -24,12 +24,15 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
         this.data = data;
     }
 
+
     @Override
     public BinaryTreeNode<E> getRoot() {
         if (getParent() != null) {
-            parent.getRoot();
+            return getParent().getRoot();
+        } else {
+            return this;
         }
-        return this;
+
     }
 
     @Override
@@ -49,7 +52,10 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     @Override
     public void setLeft(BinaryTreeNode<E> child) {
         leftChild = child;
-        ((LinkedBinaryTreeNode<E>) child).setParent(this);
+        if (child != null) {
+            ((LinkedBinaryTreeNode<E>) child).setParent(this);
+        }
+
     }
 
     @Override
@@ -60,7 +66,10 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     @Override
     public void setRight(BinaryTreeNode<E> child) {
         rightChild = child;
-        ((LinkedBinaryTreeNode<E>) child).setParent(this);
+        if (child != null) {
+            ((LinkedBinaryTreeNode<E>) child).setParent(this);
+        }
+
     }
 
     @Override
@@ -101,8 +110,6 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     @Override
     public int getHeight() {
 //        int height = 0;
-        ArrayList<BinaryTreeNode<E>> leafList = new ArrayList<>();
-        BinaryTreeNode<E> root = getRoot();
         traverseInorder(node -> {
             if (node.isLeaf()) {
                 if (node.getDepth() >= height) {
@@ -198,10 +205,10 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     @Override
     public void traversePostorder(Visitor visitor) {
         BinaryTreeNode<E> node = this;
-        if(node.hasLeftChild()){
+        if (node.hasLeftChild()) {
             node.getLeft().traversePostorder(visitor);
         }
-        if(node.hasRightChild()){
+        if (node.hasRightChild()) {
             this.getRight().traversePostorder(visitor);
         }
         visitor.visit(this);
@@ -210,27 +217,16 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
     @Override
     public void traverseInorder(Visitor visitor) {
         BinaryTreeNode<E> node = this;
-        if(node.hasLeftChild()){
+        if (node.hasLeftChild()) {
             this.getLeft().traverseInorder(visitor);
         }
         visitor.visit(this);
-        if(node.hasRightChild()){
+        if (node.hasRightChild()) {
             this.getRight().traverseInorder(visitor);
         }
 
 
-
     }
 
-
-    public static void main(String[] args) {
-//        ArrayList<Integer> test = new ArrayList<>();
-//        test.add(0, 4);
-//        test.add(0, 5);
-//        test.add(0, 7);
-//        System.out.println(test.toString());
-        LinkedBinaryTreeNode<Integer> test = new LinkedBinaryTreeNode<>(5);
-
-    }
 
 }

@@ -1,7 +1,9 @@
 Q:Does it Moo?
 Q:Is it Bigger than a breadBox;
-A:gnat
+A:Gnat
 Q:Does it live in water?
-A:elephant
-A:whale
-A:cow
+Q:does it roar
+A:Elephant
+A:Lion
+A:Whale
+A:Cow
