@@ -67,7 +67,7 @@ public class Program4 {
     }
 
     public void writeTree(BinaryTreeNode<String> treeRoot) throws FileNotFoundException {
-        File printFile = new File("tree.data");
+        File printFile = new File("tree2.data");
         PrintWriter writer = new PrintWriter(printFile);
         ArrayList<String> list = new ArrayList<>();
         treeRoot.traversePreorder(node -> {
@@ -177,7 +177,7 @@ public class Program4 {
 
     public static void main(String[] args) throws FileNotFoundException {
         Program4 program = new Program4();
-        File file = new File("tree.data");
+        File file = new File("tree2.data");
         Scanner input = new Scanner(System.in);
         System.out.println("Shall we play a game");
         String answer = input.next();
