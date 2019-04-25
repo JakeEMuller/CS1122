@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class DebugingProgramIncorrect<E>  extends Comparable<E> { // extends comparable needs to be within generic
+public class LinkedStackDebug<E>  extends Comparable<E> { // extends comparable needs to be within generic
     class Node{
         E data;
         Node previousNode;
@@ -20,7 +20,7 @@ public class DebugingProgramIncorrect<E>  extends Comparable<E> { // extends com
             newNode.previousNode = topNode;
             topNode = newNode;
         }
-        size--;
+        size--; // size should increase
     }
 
     public E peek(){
@@ -51,7 +51,7 @@ public class DebugingProgramIncorrect<E>  extends Comparable<E> { // extends com
     }
 
     private String toString(){ //method type should be public
-        DebugingProgramIncorrect<E> iterator = this;
+        LinkedStackDebug<E> iterator = this;
         ArrayList<E> list = new ArrayList<>();
         while(iterator.topNode != null){
             list.add(iterator.pop());
