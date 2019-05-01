@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-
 import java.util.ArrayList;
 
 public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
@@ -225,8 +223,6 @@ public class LinkedBinaryTreeNode<E> implements BinaryTreeNode<E> {
             this.getRight().traverseInorder(visitor);
         }
 
-
     }
-
 
 }

@@ -66,8 +66,8 @@ public class Program4 {
         return rootQuestion;
     }
 
-    public void writeTree(BinaryTreeNode<String> treeRoot) throws FileNotFoundException {
-        File printFile = new File("tree2.data");
+    public void writeTree(File file,BinaryTreeNode<String> treeRoot) throws FileNotFoundException {
+        File printFile = file;
         PrintWriter writer = new PrintWriter(printFile);
         ArrayList<String> list = new ArrayList<>();
         treeRoot.traversePreorder(node -> {
@@ -140,9 +140,8 @@ public class Program4 {
 
         Scanner input = new Scanner(System.in);
         System.out.println("What was the animal you were thinking of");
-        String animal = input.next();
+        String animal = input.nextLine();
         System.out.println("What question separates " + animal + " from " + wrongAnswer.getData());
-        input.nextLine();
         String newQuestion = input.nextLine();
         System.out.println("What is the Answer to this question (yes or no)");
         String newAnswer = input.next();
@@ -176,8 +175,21 @@ public class Program4 {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+        File inputFile = null;
+        try{
+            inputFile = new File(args[0]);
+        } catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Moving to default package");
+        }
+
+
         Program4 program = new Program4();
         File file = new File("tree2.data");
+        if(inputFile != null){
+            file = inputFile;
+        }
+
         Scanner input = new Scanner(System.in);
         System.out.println("Shall we play a game");
         String answer = input.next();
@@ -187,9 +199,9 @@ public class Program4 {
         } else if (answer.equalsIgnoreCase("yes")) {
             LinkedBinaryTreeNode<String> rootNode = program.loadFile(file);
             BinaryTreeNode<String> newPrint = program.play20Questions(rootNode);
-            program.writeTree(newPrint);
+            program.writeTree(file, newPrint);
         } else {
-            System.out.println("that is not a correct input (yes or no)");
+            System.out.println("that is not a correct inputFile (yes or no)");
         }
 
 
